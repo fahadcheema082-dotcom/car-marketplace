@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    //"baseUrl": "http://localhost:3000/",
+    "paths": {
+      "@/*": ["./*"]
+    }
+  }
+}
