@@ -9,6 +9,62 @@ const navLinks = [
   { label: 'Contact', href: '/contact' },
 ]
 
+function CarLogo() {
+  return (
+    <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
+      {/* Background circle */}
+      <rect width="40" height="40" rx="10" fill="url(#logo-gradient)" />
+
+      {/* Car silhouette */}
+      <g transform="translate(6, 11)">
+        {/* Car body */}
+        <path
+          d="M3 14h2.5l1.5-3h14l1.5 3H25"
+          stroke="#1C1F26"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          fill="none"
+        />
+        {/* Car roof */}
+        <path
+          d="M8.5 11L11 5h6l2.5 6"
+          stroke="#1C1F26"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          fill="none"
+        />
+        {/* Windows */}
+        <path
+          d="M11.5 6L10 10h4V6h-2.5z"
+          fill="#1C1F26"
+          opacity="0.3"
+        />
+        <path
+          d="M16.5 6L18 10h-4V6h2.5z"
+          fill="#1C1F26"
+          opacity="0.3"
+        />
+        {/* Front wheel */}
+        <circle cx="9" cy="15" r="2.5" fill="#1C1F26" />
+        <circle cx="9" cy="15" r="1" fill="#FFB020" />
+        {/* Rear wheel */}
+        <circle cx="19" cy="15" r="2.5" fill="#1C1F26" />
+        <circle cx="19" cy="15" r="1" fill="#FFB020" />
+      </g>
+
+      {/* Gradient definition */}
+      <defs>
+        <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40">
+          <stop offset="0%" stopColor="#FFB020" />
+          <stop offset="100%" stopColor="#FF8C00" />
+        </linearGradient>
+      </defs>
+    </svg>
+  )
+}
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
@@ -24,13 +80,18 @@ export default function Navbar() {
     <header className={`nav-glass sticky top-0 z-50 ${scrolled ? 'scrolled' : ''}`}>
       <div className="max-w-6xl mx-auto px-5 py-3 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group" onClick={() => setOpen(false)}>
-          <div className="w-10 h-10 rounded-lg bg-amber-gradient flex items-center justify-center shadow-amber-glow group-hover:scale-110 transition-transform duration-300">
-            <span className="font-mono font-bold text-charcoal text-lg">C</span>
+        <Link href="/" className="flex items-center gap-2.5 group" onClick={() => setOpen(false)}>
+          <div className="group-hover:scale-110 transition-transform duration-300">
+            <CarLogo />
           </div>
-          <span className="display text-2xl font-bold tracking-tight text-offwhite">
-            Car<span className="text-amber">Yard</span>
-          </span>
+          <div className="flex flex-col">
+            <span className="display text-xl font-bold tracking-tight text-offwhite leading-none">
+              Car<span className="text-amber">Yard</span>
+            </span>
+            <span className="text-[9px] text-offwhite/40 font-mono uppercase tracking-[0.2em] leading-none mt-0.5">
+              UK Marketplace
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}

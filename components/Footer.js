@@ -48,6 +48,30 @@ const socials = [
   },
 ]
 
+function FooterCarLogo() {
+  return (
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+      <rect width="40" height="40" rx="10" fill="url(#footer-logo-grad)" />
+      <g transform="translate(6, 11)">
+        <path d="M3 14h2.5l1.5-3h14l1.5 3H25" stroke="#1C1F26" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        <path d="M8.5 11L11 5h6l2.5 6" stroke="#1C1F26" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        <path d="M11.5 6L10 10h4V6h-2.5z" fill="#1C1F26" opacity="0.3" />
+        <path d="M16.5 6L18 10h-4V6h2.5z" fill="#1C1F26" opacity="0.3" />
+        <circle cx="9" cy="15" r="2.5" fill="#1C1F26" />
+        <circle cx="9" cy="15" r="1" fill="#FFB020" />
+        <circle cx="19" cy="15" r="2.5" fill="#1C1F26" />
+        <circle cx="19" cy="15" r="1" fill="#FFB020" />
+      </g>
+      <defs>
+        <linearGradient id="footer-logo-grad" x1="0" y1="0" x2="40" y2="40">
+          <stop offset="0%" stopColor="#FFB020" />
+          <stop offset="100%" stopColor="#FF8C00" />
+        </linearGradient>
+      </defs>
+    </svg>
+  )
+}
+
 export default function Footer() {
   const year = new Date().getFullYear()
 
@@ -61,13 +85,18 @@ export default function Footer() {
       <div className="relative z-10 max-w-6xl mx-auto px-5 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10 lg:gap-8">
           <div>
-            <Link href="/" className="flex items-center gap-2 group mb-5 w-fit">
-              <div className="w-10 h-10 rounded-lg bg-amber-gradient flex items-center justify-center shadow-amber-glow group-hover:scale-110 transition-transform duration-300">
-                <span className="font-mono font-bold text-charcoal text-lg">C</span>
+            <Link href="/" className="flex items-center gap-2.5 group mb-5 w-fit">
+              <div className="group-hover:scale-110 transition-transform duration-300">
+                <FooterCarLogo />
               </div>
-              <span className="display text-2xl font-bold tracking-tight">
-                Car<span className="text-amber">Yard</span>
-              </span>
+              <div className="flex flex-col">
+                <span className="display text-2xl font-bold tracking-tight leading-none">
+                  Car<span className="text-amber">Yard</span>
+                </span>
+                <span className="text-[9px] text-offwhite/40 font-mono uppercase tracking-[0.2em] leading-none mt-0.5">
+                  UK Marketplace
+                </span>
+              </div>
             </Link>
 
             <p className="text-offwhite/60 leading-relaxed max-w-sm mb-6">
@@ -79,7 +108,6 @@ export default function Footer() {
               <span className="plate-badge">EST. 2025</span>
             </div>
 
-            {/* Social icons */}
             <div className="flex items-center gap-3">
               {socials.map((s) => (
                 <a
