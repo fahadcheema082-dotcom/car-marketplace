@@ -48,23 +48,25 @@ const socials = [
   },
 ]
 
-function FooterCarLogo() {
+function FooterPremiumLogo() {
   return (
-    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-      <rect width="40" height="40" rx="10" fill="url(#footer-logo-grad)" />
-      <g transform="translate(6, 11)">
-        <path d="M3 14h2.5l1.5-3h14l1.5 3H25" stroke="#1C1F26" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-        <path d="M8.5 11L11 5h6l2.5 6" stroke="#1C1F26" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-        <path d="M11.5 6L10 10h4V6h-2.5z" fill="#1C1F26" opacity="0.3" />
-        <path d="M16.5 6L18 10h-4V6h2.5z" fill="#1C1F26" opacity="0.3" />
-        <circle cx="9" cy="15" r="2.5" fill="#1C1F26" />
-        <circle cx="9" cy="15" r="1" fill="#FFB020" />
-        <circle cx="19" cy="15" r="2.5" fill="#1C1F26" />
-        <circle cx="19" cy="15" r="1" fill="#FFB020" />
-      </g>
+    <svg width="48" height="48" viewBox="0 0 60 60" fill="none">
+      <circle cx="30" cy="30" r="29" fill="#1C1F26" stroke="url(#f-ring-grad)" strokeWidth="1.5" />
+      <circle cx="30" cy="30" r="26" fill="#1C1F26" />
+      <circle cx="30" cy="30" r="26" stroke="#FFB020" strokeWidth="0.5" opacity="0.4" fill="none" />
+      <path d="M 22 20 A 10 10 0 1 0 22 40" stroke="url(#f-letter-grad)" strokeWidth="3" strokeLinecap="round" fill="none" />
+      <path d="M 30 20 L 34 28 L 38 20 M 34 28 L 34 40" stroke="url(#f-letter-grad)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <circle cx="30" cy="47" r="1.2" fill="#FFB020" />
+      <path d="M 25 13 L 30 11 L 35 13" stroke="#FFB020" strokeWidth="1" strokeLinecap="round" fill="none" opacity="0.7" />
       <defs>
-        <linearGradient id="footer-logo-grad" x1="0" y1="0" x2="40" y2="40">
+        <linearGradient id="f-ring-grad" x1="0" y1="0" x2="60" y2="60">
           <stop offset="0%" stopColor="#FFB020" />
+          <stop offset="50%" stopColor="#FF8C00" />
+          <stop offset="100%" stopColor="#FFB020" />
+        </linearGradient>
+        <linearGradient id="f-letter-grad" x1="0" y1="0" x2="0" y2="60">
+          <stop offset="0%" stopColor="#FFD966" />
+          <stop offset="50%" stopColor="#FFB020" />
           <stop offset="100%" stopColor="#FF8C00" />
         </linearGradient>
       </defs>
@@ -85,16 +87,16 @@ export default function Footer() {
       <div className="relative z-10 max-w-6xl mx-auto px-5 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10 lg:gap-8">
           <div>
-            <Link href="/" className="flex items-center gap-2.5 group mb-5 w-fit">
-              <div className="group-hover:scale-110 transition-transform duration-300">
-                <FooterCarLogo />
+            <Link href="/" className="flex items-center gap-3 group mb-5 w-fit">
+              <div className="group-hover:rotate-[360deg] transition-transform duration-700 ease-out">
+                <FooterPremiumLogo />
               </div>
               <div className="flex flex-col">
                 <span className="display text-2xl font-bold tracking-tight leading-none">
                   Car<span className="text-amber">Yard</span>
                 </span>
-                <span className="text-[9px] text-offwhite/40 font-mono uppercase tracking-[0.2em] leading-none mt-0.5">
-                  UK Marketplace
+                <span className="text-[9px] text-amber/70 font-mono uppercase tracking-[0.25em] leading-none mt-1.5">
+                  Premium · UK
                 </span>
               </div>
             </Link>

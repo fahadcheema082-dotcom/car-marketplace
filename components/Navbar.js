@@ -9,96 +9,62 @@ const navLinks = [
   { label: 'Contact', href: '/contact' },
 ]
 
-function PremiumCarLogo() {
+function PremiumLogo() {
   return (
-    <svg width="42" height="42" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* Rounded square background with gradient */}
-      <rect width="48" height="48" rx="12" fill="url(#premium-bg)" />
-      
-      {/* Subtle inner shadow/border */}
-      <rect x="1" y="1" width="46" height="46" rx="11" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" fill="none" />
+    <svg width="44" height="44" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Outer ring — dark charcoal */}
+      <circle cx="30" cy="30" r="29" fill="#1C1F26" stroke="url(#ring-grad)" strokeWidth="1.5" />
 
-      {/* Sleek sports car - side profile */}
-      <g transform="translate(5, 14)">
-        {/* Car body - sleek aerodynamic shape */}
-        <path
-          d="M4 16 L7 16 L8 13 L12 13 L14 7 L16 5 L22 4 L28 5 L30 7 L31 10 L33 13 L35 13 L36 16 L38 16"
-          stroke="#1C1F26"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          fill="rgba(28,31,38,0.15)"
-        />
+      {/* Inner dark plate */}
+      <circle cx="30" cy="30" r="26" fill="#1C1F26" />
 
-        {/* Windshield */}
-        <path
-          d="M15 7.5 L17 5.5 L22 4.5 L26 5 L28 6.5 L29 9 L15 9 Z"
-          fill="rgba(28,31,38,0.35)"
-          stroke="#1C1F26"
-          strokeWidth="0.8"
-        />
+      {/* Amber outer accent ring */}
+      <circle cx="30" cy="30" r="26" stroke="#FFB020" strokeWidth="0.5" opacity="0.4" fill="none" />
 
-        {/* Window divider */}
-        <line x1="22" y1="4.8" x2="22" y2="9" stroke="#1C1F26" strokeWidth="0.8" />
+      {/* Center — Stylized "CY" monogram */}
+      {/* Letter C — left side arc */}
+      <path
+        d="M 22 20 A 10 10 0 1 0 22 40"
+        stroke="url(#letter-grad)"
+        strokeWidth="3"
+        strokeLinecap="round"
+        fill="none"
+      />
 
-        {/* Headlight front */}
-        <ellipse cx="34" cy="12" rx="1.5" ry="1" fill="#1C1F26" />
-        <ellipse cx="34" cy="12" rx="0.7" ry="0.5" fill="#FFB020" />
+      {/* Letter Y — right side */}
+      <path
+        d="M 30 20 L 34 28 L 38 20 M 34 28 L 34 40"
+        stroke="url(#letter-grad)"
+        strokeWidth="3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
 
-        {/* Tail light rear */}
-        <ellipse cx="7" cy="13.5" rx="1.2" ry="0.8" fill="#cc3333" opacity="0.8" />
+      {/* Small accent dot — signature touch */}
+      <circle cx="30" cy="47" r="1.2" fill="#FFB020" />
 
-        {/* Door line */}
-        <path d="M18 9 L18 13" stroke="#1C1F26" strokeWidth="0.6" opacity="0.5" />
-
-        {/* Side accent line */}
-        <path
-          d="M9 13 L33 13"
-          stroke="#1C1F26"
-          strokeWidth="0.5"
-          opacity="0.3"
-        />
-
-        {/* Side skirt line */}
-        <path
-          d="M10 14.5 L32 14.5"
-          stroke="#1C1F26"
-          strokeWidth="0.6"
-          opacity="0.2"
-        />
-
-        {/* Front wheel */}
-        <circle cx="13" cy="16" r="3.2" fill="#1C1F26" />
-        <circle cx="13" cy="16" r="2" fill="#2a2a2a" />
-        <circle cx="13" cy="16" r="1.2" fill="#FFB020" />
-        <circle cx="13" cy="16" r="0.4" fill="#1C1F26" />
-        {/* Wheel spokes */}
-        <line x1="13" y1="14" x2="13" y2="14.8" stroke="#444" strokeWidth="0.4" />
-        <line x1="13" y1="17.2" x2="13" y2="18" stroke="#444" strokeWidth="0.4" />
-        <line x1="11" y1="16" x2="11.8" y2="16" stroke="#444" strokeWidth="0.4" />
-        <line x1="14.2" y1="16" x2="15" y2="16" stroke="#444" strokeWidth="0.4" />
-
-        {/* Rear wheel */}
-        <circle cx="31" cy="16" r="3.2" fill="#1C1F26" />
-        <circle cx="31" cy="16" r="2" fill="#2a2a2a" />
-        <circle cx="31" cy="16" r="1.2" fill="#FFB020" />
-        <circle cx="31" cy="16" r="0.4" fill="#1C1F26" />
-        {/* Wheel spokes */}
-        <line x1="31" y1="14" x2="31" y2="14.8" stroke="#444" strokeWidth="0.4" />
-        <line x1="31" y1="17.2" x2="31" y2="18" stroke="#444" strokeWidth="0.4" />
-        <line x1="29" y1="16" x2="29.8" y2="16" stroke="#444" strokeWidth="0.4" />
-        <line x1="32.2" y1="16" x2="33" y2="16" stroke="#444" strokeWidth="0.4" />
-
-        {/* Ground reflection line */}
-        <line x1="8" y1="19.5" x2="36" y2="19.5" stroke="#1C1F26" strokeWidth="0.3" opacity="0.15" />
-      </g>
+      {/* Top laurel accent */}
+      <path
+        d="M 25 13 L 30 11 L 35 13"
+        stroke="#FFB020"
+        strokeWidth="1"
+        strokeLinecap="round"
+        fill="none"
+        opacity="0.7"
+      />
 
       {/* Gradient definitions */}
       <defs>
-        <linearGradient id="premium-bg" x1="0" y1="0" x2="48" y2="48">
-          <stop offset="0%" stopColor="#FFBE2E" />
+        <linearGradient id="ring-grad" x1="0" y1="0" x2="60" y2="60">
+          <stop offset="0%" stopColor="#FFB020" />
+          <stop offset="50%" stopColor="#FF8C00" />
+          <stop offset="100%" stopColor="#FFB020" />
+        </linearGradient>
+        <linearGradient id="letter-grad" x1="0" y1="0" x2="0" y2="60">
+          <stop offset="0%" stopColor="#FFD966" />
           <stop offset="50%" stopColor="#FFB020" />
-          <stop offset="100%" stopColor="#F59E0B" />
+          <stop offset="100%" stopColor="#FF8C00" />
         </linearGradient>
       </defs>
     </svg>
@@ -121,15 +87,15 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-5 py-3 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group" onClick={() => setOpen(false)}>
-          <div className="group-hover:scale-105 transition-transform duration-300 drop-shadow-lg">
-            <PremiumCarLogo />
+          <div className="group-hover:rotate-[360deg] transition-transform duration-700 ease-out drop-shadow-[0_2px_12px_rgba(255,176,32,0.35)]">
+            <PremiumLogo />
           </div>
           <div className="flex flex-col">
             <span className="display text-[22px] font-bold tracking-tight text-offwhite leading-none">
               Car<span className="text-amber">Yard</span>
             </span>
-            <span className="text-[9px] text-offwhite/45 font-mono uppercase tracking-[0.18em] leading-none mt-1">
-              UK Marketplace
+            <span className="text-[9px] text-amber/70 font-mono uppercase tracking-[0.25em] leading-none mt-1.5">
+              Premium · UK
             </span>
           </div>
         </Link>
